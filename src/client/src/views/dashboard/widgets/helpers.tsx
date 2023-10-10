@@ -86,10 +86,10 @@ export const getByTime = (array: ArrayType, time: number): any[] => {
 
   // check to see if we're working in days (isDay = false) or hours (isDay = true)
   const isDay = time <= 1;
-
+  const timezoneOffset = new Date().getTimezoneOffset();
   const today = isDay
-    ? new Date().setMinutes(0, 0, 0)
-    : new Date().setHours(0, 0, 0, 0);
+    ? new Date().setMinutes(timezoneOffset, 0, 0)
+    : new Date().setHours(0, timezoneOffset, 0, 0);
 
   // Look through each transaction in the array and build an array of transactions with the difference between today and the day (or hour) that the tx occurred
   array.forEach((transaction: ArrayType[0]) => {
