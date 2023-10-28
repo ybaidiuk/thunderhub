@@ -591,6 +591,12 @@ export const ChannelTable = () => {
         data={tableData}
         withGlobalSort={true}
         withSorting={true}
+        initSorting={[
+          {
+            id: 'balanceBars',
+            desc: false,
+          },
+        ]}
         toggleConfiguration={handleToggle}
         defaultHiddenColumns={hiddenColumnState}
         filterPlaceholder="channels"
