@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import ReactSelect from 'react-select';
 import styled, { css } from 'styled-components';
 import {
@@ -121,6 +121,7 @@ export const Select = ({
   return (
     <StyledWrapper maxWidth={maxWidth} fullWidth={true}>
       <StyledSelect
+        instanceId={useId()}
         isMulti={isMulti}
         classNamePrefix={'Select'}
         options={options}
@@ -159,6 +160,7 @@ export const SelectWithValue = ({
   return (
     <StyledWrapper maxWidth={maxWidth} minWidth={minWidth} fullWidth={false}>
       <StyledSelect
+        instanceId={useId()}
         isMulti={isMulti}
         classNamePrefix={'Select'}
         options={options}
@@ -188,6 +190,7 @@ export const SmallSelectWithValue = ({
   return (
     <StyledWrapper maxWidth={maxWidth} fullWidth={true}>
       <StyledSmallSelect
+        instanceId={useId()}
         isMulti={isMulti}
         classNamePrefix={'Select'}
         options={options}
